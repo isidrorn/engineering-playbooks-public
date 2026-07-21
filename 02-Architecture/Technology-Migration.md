@@ -9,43 +9,56 @@ Use this playbook when migrating from one technology, platform, or major depende
 ## Level 1 Checklist
 
 ### 🔍 Justify
-□ Concrete problem with the current technology stated (not just "it's old")
-□ Cost of staying vs cost of migrating compared honestly
-□ Target technology's trade-offs understood, not just its advertised benefits
-□ Alternative of not migrating (mitigate in place) explicitly considered and rejected for a reason
+
+- [ ] Concrete problem with the current technology stated (not just "it's old")
+- [ ] Cost of staying vs cost of migrating compared honestly
+- [ ] Target technology's trade-offs understood, not just its advertised benefits
+- [ ] Feature parity gaps between old and new technology identified upfront, not discovered mid-migration
+- [ ] Alternative of not migrating (mitigate in place) explicitly considered and rejected for a reason
 
 ### 💡 Scope
-□ What is and isn't included in the migration is explicit
-□ Dependent systems and integration points inventoried
-□ Data/schema compatibility gaps identified upfront
-□ Migration broken into independently shippable phases, not one giant cutover
+
+- [ ] What is and isn't included in the migration is explicit
+- [ ] Dependent systems and integration points inventoried
+- [ ] Data/schema compatibility gaps identified upfront
+- [ ] Migration broken into independently shippable phases, not one giant cutover
+- [ ] "Good enough" migration defined — not everything needs to migrate; identify the 80/20 and call out what's deliberately left behind
+- [ ] Team training/upskilling planned before migration starts, not improvised during it
 
 ### ⚙️ Plan
-□ Rollout strategy chosen (dual-run, phased traffic shift, big-bang only if truly justified)
-□ Rollback plan defined and tested before execution starts, not improvised mid-incident
-□ Success criteria and go/no-go checkpoints defined per phase
-□ Communication plan for affected teams and downstream consumers in place
+
+- [ ] Rollout strategy chosen (dual-run, phased traffic shift, big-bang only if truly justified)
+- [ ] Rollback plan defined and tested before execution starts, not improvised mid-incident
+- [ ] Success criteria and go/no-go checkpoints defined per phase
+- [ ] Communication plan for affected teams and downstream consumers in place
+- [ ] Single source of truth designated during dual-run to avoid split-brain (which system is authoritative for which data, at every point in the migration)
+- [ ] Hard decommission deadline for the old system set now — without one, the old system never actually dies
 
 ### ⚙️ Execute
-□ Migration executed in the planned phases with checkpoints honored
-□ Feature flags or routing control the traffic split between old and new
-□ Data consistency between old and new systems validated continuously during dual-run
-□ Deviations from plan documented as they happen, not reconstructed afterward
+
+- [ ] Migration executed in the planned phases with checkpoints honored
+- [ ] Feature flags or routing control the traffic split between old and new
+- [ ] Data consistency between old and new systems validated continuously during dual-run
+- [ ] Deviations from plan documented as they happen, not reconstructed afterward
 
 ### ✅ Verify
-□ Performance, error rates, and cost compared against baseline from the old system
-□ Edge cases and failure modes specific to the new technology tested, not assumed equivalent
-□ On-call/runbooks updated to reflect the new technology's operational profile
-□ Monitoring and alerting fully migrated, not still pointed at the old system
+
+- [ ] Performance, error rates, and cost compared against baseline from the old system
+- [ ] Regression testing done with production-like data volumes, not toy datasets
+- [ ] Edge cases and failure modes specific to the new technology tested, not assumed equivalent
+- [ ] On-call/runbooks updated to reflect the new technology's operational profile
+- [ ] Monitoring and alerting fully migrated, not still pointed at the old system
 
 ### 📝 Decommission
-□ Old system traffic confirmed at zero before teardown
-□ Old infrastructure, credentials, and access actually removed, not just left idle
-□ Documentation, diagrams, and onboarding material updated to reflect the new reality
-□ Migration retrospective captured: what worked, what to change next time
+
+- [ ] Old system traffic confirmed at zero before teardown
+- [ ] Long-tail stragglers accounted for (the last 10% of migration typically takes half the total effort — budget for it, don't be surprised by it)
+- [ ] Old infrastructure, credentials, and access actually removed, not just left idle
+- [ ] Documentation, diagrams, and onboarding material updated to reflect the new reality
+- [ ] Migration retrospective captured: what worked, what to change next time
 
 ---
 
 ## Notes
 
-A migration isn't done when the new system works — it's done when the old one is gone and nobody has to remember it existed.
+A migration isn't done when the new system works — it's done when the old one is gone and nobody has to remember it existed. The hard deadline for decommission matters more than any other item on this list: without one, "temporarily" running both systems becomes the permanent state.

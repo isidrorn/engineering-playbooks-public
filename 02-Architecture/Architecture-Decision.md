@@ -1,4 +1,4 @@
-# Architecture Decision Checklist
+# Architecture Decision
 
 ## Purpose
 

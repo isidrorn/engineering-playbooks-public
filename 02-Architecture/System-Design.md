@@ -1,4 +1,4 @@
-# System Design Checklist
+# System Design
 
 ## Purpose
 

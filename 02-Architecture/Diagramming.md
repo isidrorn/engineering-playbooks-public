@@ -1,4 +1,4 @@
-# Diagramming Checklist
+# Diagramming
 
 ## Purpose
 

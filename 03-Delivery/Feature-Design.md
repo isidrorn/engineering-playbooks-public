@@ -1,4 +1,4 @@
-# Feature Design Checklist
+# Feature Design
 
 ## Purpose
 

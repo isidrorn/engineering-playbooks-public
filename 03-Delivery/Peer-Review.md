@@ -1,4 +1,4 @@
-# Peer Review Checklist
+# Peer Review
 
 ## Purpose
 

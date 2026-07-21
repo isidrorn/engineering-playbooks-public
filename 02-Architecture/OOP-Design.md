@@ -1,8 +1,8 @@
-# OOP Design Checklist
+# OOP Design
 
 ## Purpose
 
-Use this checklist when making structural object-oriented design decisions — class boundaries, inheritance vs composition, which pattern (if any) fits. It's a refresher on SOLID, coupling/cohesion, and pattern selection for an engineer who knows this material but hasn't had to apply it deliberately in a while.
+Use this checklist when making structural object-oriented design decisions — class boundaries, inheritance vs composition, responsibility placement. It's a refresher on SOLID and coupling/cohesion for an engineer who knows this material but hasn't had to apply it deliberately in a while. For choosing a specific design pattern, see [Design Patterns](Design-Patterns.md).
 
 ---
 
@@ -24,16 +24,6 @@ Use this checklist when making structural object-oriented design decisions — c
 - [ ] Is the Law of Demeter respected? (don't reach through objects: `a.getB().getC().doThing()`)
 - [ ] Are implementation details leaking through the public API (return types, exceptions, or parameters that expose internals)?
 - [ ] Composition preferred over inheritance where there's no true "is-a" relationship — is inheritance here for code reuse (wrong reason) or genuine substitutability (right reason)?
-
-### ⚙️ Design Patterns (when to reach for them)
-
-- [ ] Strategy: interchangeable algorithms/behaviors need to be swapped at runtime
-- [ ] Factory: construction logic is complex or needs to vary by context
-- [ ] Observer/Event: producers shouldn't need to know about their consumers
-- [ ] Decorator: behavior needs to be layered without an explosion of subclasses
-- [ ] Builder: constructor has too many parameters, or many of them are optional
-- [ ] Template Method: the algorithm's skeleton is fixed but individual steps vary by subtype
-- [ ] Checked that a pattern is actually earning its complexity — if the code is clear without one, the pattern is being forced in
 
 ### ✅ Common Traps
 

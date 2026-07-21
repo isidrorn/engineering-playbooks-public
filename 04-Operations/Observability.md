@@ -1,4 +1,4 @@
-# Observability Checklist
+# Observability
 
 ## Purpose
 

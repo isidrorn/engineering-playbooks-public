@@ -27,7 +27,3 @@ and only the repo owner checks a box after personally reviewing that file. **Nev
 a Review Status box on the user's behalf** — doing so would misrepresent review that
 hasn't happened, undermining the entire point of the table.
 
-**License**: intended to be CC BY 4.0 (documentation/content repo, not code — Creative
-Commons over MIT), but the LICENSE file itself has not been created yet (deferred
-2026-07). The README currently has no license section — don't assume one exists until
-this is revisited.
